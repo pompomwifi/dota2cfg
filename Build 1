@@ -3,7 +3,7 @@ engine_no_focus_sleep 0 // you don't lose fps when you alt-tab out
 bind "F8" "exec autoexec.cfg" // executes this config again to have smartcast working every time you start a match
 bind "F11" "toggleconsole"
 
-alias dc disconnect // you can now disconnect by typing "dc" in console, useful for recons and forcing enemy to wait for afk guy
+alias dc disconnect // you can now disconnect by typing "dc" in console
 
 alias rune1 "dota_camera_setpos -2273.898682 1232.745483 982.072876;bind f3 rune2" // Top Rune
 alias rune2 "dota_camera_setpos 3035.773438 -2972.680176 966.072937;bind f3 backtome" // Bot Rune
