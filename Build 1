@@ -1,6 +1,6 @@
 con_enable 1
 engine_no_focus_sleep 0 // you don't lose fps when you alt-tab out
-bind "F8" "exec autoexec.cfg" // Strongly recommended to bind: Executes this config again which is needed to have smartcast working every time you start a match.
+bind "F8" "exec autoexec.cfg" // executes this config again which is needed to have smartcast working every time you start a match
 bind "F11" "toggleconsole"
 
 alias dc disconnect // you can now disconnect by typing "dc" in console, useful for recons and forcing enemy to wait for afk guy
