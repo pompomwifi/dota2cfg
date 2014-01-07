@@ -1,10 +1,26 @@
-// Set launch options: -novid -noforcemaccel -noforcemspd -useforcedmparms -high -nod3d9ex
+// autoexec = steam/steamapps/common/dota 2 beta/dota/cfg
+// launch options = steam library, right click dota 2 and click properties. then launch properties on the first tab
+// set launch options: -nod3d9ex -novid -high -dxlevel 81 -heapsize 1048576 -noforcemaccel -noforcemspd -useforcedmparms
 con_enable 1
 
 engine_no_focus_sleep 0 // you don't lose fps when you alt-tab out
 
 bind "F8" "exec autoexec.cfg" // executes this config again to have smartcast working every time you start a match
 bind "F11" "toggleconsole"
+bind "LEFTARROW" "say_team miss top"
+bind "RIGHTARROW" "say_team miss bottom"
+bind "DOWNARROW" "say_team miss mid"
+bind "UPARROW" "say_team re"
+echo "autoexec enabled!"
+
+//holding 'y' now creates a ring around yourself which has the exact range of a tower. 
+alias "+range" "dota_range_display 950" 
+alias "-range" "dota_range_display 0"
+bind "y" "+range"
+
+//pressing 'i' lets the courier grab your stuff from stash brings it to you and if it is a flying courier it uses boost.
+alias "quick_courier" "dota_select_courier; dota_ability_execute 2; dota_ability_execute 3; dota_ability_execute 4; +dota_camera_follow" 
+bind "i" "quick_courier"
 
 alias dc disconnect // you can now disconnect by typing "dc" in console
 
@@ -38,8 +54,9 @@ alias -info "net_graph 0; -showscores"
 bind [l] +info
 
 fps_max "60"
-ragdoll_sleepaftertime "3"
-props_break_max_pieces "2"
+cl_forcepreload 1
+sv_forcepreload 1
+snd_mix_async 1
 net_compressvoice "1"
 net_maxcleartime "0"
 mem_level "0"
@@ -52,11 +69,20 @@ cl_particle_fallback_multiplier "0"
 cl_detaildist "400"
 cl_detailfade "150"
 cl_phys_maxticks "3"
-cl_interp_ratio "1"
-cl_interp "0.035"
-cl_smooth "0"
 cl_threaded_bone_setup "1"
 cl_threaded_init "1"
+cl_cmdrate 66
+cl_interp 0.0152
+cl_interp_ratio 1
+cl_lagcompensation 1
+cl_pred_optimize 2
+cl_smooth 0
+cl_smoothtime 0.01
+cl_updaterate 66
+rate 60000
+cl_showfps 0
+ragdoll_sleepaftertime "3"
+props_break_max_pieces "2"
 r_deferred_height_fog "0"
 r_deferred_simple_light "1"
 r_screenspace_aa "0"
