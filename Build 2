@@ -1,0 +1,137 @@
+// Additional settings: Steam -> Right click Dota 2 -> Properties -> Set launch options
+// In the text field enter: -console -novid -noforcemaccel -noforcemspd -useforcedparms -high -dxlevel 81 -noborder -w 1920 -h 1080
+
+ECHO SHREK IS LOVE, SHREK IS LIFE
+
+con_enable "1"
+fps_max "90"
+
+net_graph "1"
+net_graphheight "64"
+net_graphholdsvframerate "0"
+net_graphinsetbottom "437"
+net_graphinsetleft "0"
+net_graphinsetright "-80"
+net_graphinsettop "0"
+net_graphmsecs "400"
+net_graphpos "1"
+net_graphproportionalfont "0"
+net_graphshowinterp "1"
+net_graphshowlatency "1"
+net_graphshowsvframerate "0"
+net_graphsolid "1"
+net_graphtext "1"
+net_maxroutable "1200"
+net_scale "5"
+
+//rate 30000
+//cl_cmdrate 30
+//cl_updaterate 30
+//cl_interp 0.0333
+//cl_interp_ratio -1
+// actual value will clamp to the minimum value allowed by the current server
+
+cl_cmdrate "60"
+// Amount of updates sent to server per second
+cl_updaterate "60"
+// Amount of updates received from server per second
+rate "80000"
+// Total amount of bandwith dota may use
+cl_interp "0"
+// More network stuff below...
+cl_interp_ratio "1"
+cl_smooth "1"
+cl_smoothtime "0.01"
+cl_lagcompensation "1"
+cl_pred_optimize "2"
+
+Max FPS for client to render (Default 120)
+dota_force_right_click_attack "1"
+dota_screen_shake "0"
+dota_disable_range_finder "0"
+dota_player_multipler_orders "1"
+// Ctrl - move all
+dota_unit_fly_bonus_height "150"
+dota_minimap_simple_colors "1"
+dota_minimap_misclick_time "0"
+dota_health_per_vertical_marker "250"
+dota_embers "0"
+dota_minimap_ping_duration "5"
+// Controls the delay before minimap pings disappear
+dota_minimap_hero_size "900"
+dota_camera_accelerate "10"
+dota_camera_speed "6500"
+// Scrolling speed; vanilla DotA-like is 6500
+dota_ability_quick_cast "1"
+// Doubletapping to selfcast
+dota_unit_fly_bonus_height "10"
+// Flying height of air units
+dota_health_hurt_decay_time_min "0"
+dota_health_hurt_decay_time_max "0"
+// Fade time on DMG done/received reduced to instant
+dota_health_hurt_decay_time_min "0"
+dota_health_hurt_delay "0"
+dota_pain_decay "0"
+dota_pain_factor "0"
+dota_pain_fade_rate "0"
+dota_pain_multiplier "0"
+dota_hud_healthbars 1
+dota_cheap_water "1"
+dota_unit_use_player_color "0"
+dota_shop_force_hotkeys "1"
+dota_always_show_player_names "1"
+// Always show player names
+dota_camera_disable_zoom "0"
+// Disables mousewheel zoom
+dota_reset_camera_on_spawn "0"
+// Center screen on hero after respawn
+engine_no_focus_sleep "0"
+// keeps dota running at max frame rates even when alt + tabbed
+cl_forcepreload "1"
+// reducing loading pauses and stuttering (information to preload)
+sv_forcepreload "1"
+cl_globallight_shadow_mode "0"
+r_deferred_height_fog "0"
+r_deferred_simple_light "1"
+r_screenspace_aa "0"
+dota_killcam_show "1"
+dota_sf_hud_killcam "1"
+dota_sf_game_end_delay "0"
+windows_speaker_config "1"
+// Sound optimized for headset
+windows_speaker_setting "1"
+// Sound optimized for headset
+volume "0.5"
+// Volume adjusted for teamspeak
+snd_musicvolume "0"
+// Ingame music volume (Min "0" Max "1.0")
+
+alias "quick_courier" "dota_courier_deliver; say_team Courier is coming TO ME!;dota_select_courier;dota_ability_execute 5;+dota_camera_follow"
+bind "v" quick_courier
+// Courier picks up whole stash and brings it to you with speedup before returning to base; shift+key queue's up auto courier
+
+alias "runecheck" "runechecktop"
+alias "runechecktop" "dota_camera_set_lookatpos -2287 1817; alias runecheck runecheckbot"
+alias "runecheckbot" "dota_camera_set_lookatpos 2990 -2400; alias runecheck runecheckhero"
+alias "runecheckhero" "dota_select_all; dota_select_all; +dota_camera_follow; alias runecheck runechecktop"
+bind "g" "runecheck"
+// Toggle net graph
+
+bind "t" "dota_learn_stats"
+
+bind "F1" "say_team missTOP"
+bind "F2" "say_team missMID"
+bind "F3" "say_team missBOT"
+bind "F4" "say_team RE"
+
+alias "+showboard" "+showscores;dota_apm"
+alias "-showboard" "-showscores;"
+bind "7" "+showboard"
+bind "8" "-showboard"
+// Shows scoreboard and APM in the console
+
+// chat_join "name"
+// Automatically joins a chat channel upon launch.
+
+bind "o" "current_time"
+alias "current_time" "say_team Roshan has been slain!; chatwheel_say 57"
