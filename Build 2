@@ -1,12 +1,12 @@
-// Additional settings: Steam -> Right click Dota 2 -> Properties -> Set launch options
-// In the text field enter: -console -novid -high -nod3d9ex -dxlevel 81 -noborder -w 1920 -h 1080 -noforcemaccel -noforcemspd -useforcedparms
+//	Additional settings: Steam -> Right click Dota 2 -> Properties -> Set launch options
+//	In the text field enter: -console -novid -high -nod3d9ex -dxlevel 81 -noborder -w 1920 -h 1080 -noforcemaccel -noforcemspd -useforcedparms
 
 ECHO SHREK IS LOVE, SHREK IS LIFE
 
-con_enable "1"
-fps_max "80"
-// Max FPS for client to render (Default 120)
+con_enable "1"	//	Activate console in game
+fps_max "80"	//	Max FPS for client to render
 
+//	Network graphics in the top right corner of the screen
 net_graph "1"
 net_graphheight "64"
 net_graphholdsvframerate "0"
@@ -25,21 +25,11 @@ net_graphtext "1"
 net_maxroutable "1200"
 net_scale "5"
 
-//rate 30000
-//cl_cmdrate 30
-//cl_updaterate 30
-//cl_interp 0.0333
-//cl_interp_ratio -1
-// actual value will clamp to the minimum value allowed by the current server
-
-cl_cmdrate "60"
-// Amount of updates sent to server per second
-cl_updaterate "60"
-// Amount of updates received from server per second
-rate "80000"
-// Total amount of bandwith dota may use
+//	Overall network optimization
+cl_cmdrate "60"		//	Amount of updates sent to server per second
+cl_updaterate "60"	//	Amount of updates received from server per second
+rate "80000"		//	Total amount of bandwith dota may use
 cl_interp "0"
-// More network stuff below...
 cl_interp_ratio "1"
 cl_smooth "1"
 cl_smoothtime "0.01"
@@ -49,26 +39,19 @@ cl_pred_optimize "2"
 dota_force_right_click_attack "1"
 dota_screen_shake "0"
 dota_disable_range_finder "0"
-dota_player_multipler_orders "1"
-// Ctrl - move all
-dota_unit_fly_bonus_height "150"
+dota_player_multipler_orders "1"	//	Ctrl - move all
+dota_unit_fly_bonus_height "10"
 dota_minimap_simple_colors "1"
 dota_minimap_misclick_time "0"
-dota_health_per_vertical_marker "250"
 dota_embers "0"
-dota_minimap_ping_duration "5"
-// Controls the delay before minimap pings disappear
+dota_minimap_ping_duration "5"		//	Controls the delay before minimap pings disappear
 dota_minimap_hero_size "900"
 dota_camera_accelerate "10"
-dota_camera_speed "6500"
-// Scrolling speed; vanilla DotA-like is 6500
-dota_ability_quick_cast "1"
-// Doubletapping to selfcast
-dota_unit_fly_bonus_height "10"
-// Flying height of air units
+dota_camera_speed "6500"			//	Scrolling speed; vanilla DotA-like is 6500
+dota_ability_quick_cast "1"			//	Doubletapping to selfcast
+dota_unit_fly_bonus_height "10"		//	Flying height of air units
 dota_health_hurt_decay_time_min "0"
-dota_health_hurt_decay_time_max "0"
-// Fade time on DMG done/received reduced to instant
+dota_health_hurt_decay_time_max "0"	//	Fade time on DMG done/received reduced to instant
 dota_health_hurt_decay_time_min "0"
 dota_health_hurt_delay "0"
 dota_pain_decay "0"
@@ -79,79 +62,52 @@ dota_hud_healthbars 1
 dota_cheap_water "1"
 dota_unit_use_player_color "0"
 dota_shop_force_hotkeys "1"
-dota_always_show_player_names "1"
-// Always show player names
-dota_camera_disable_zoom "0"
-// Disables mousewheel zoom
-dota_reset_camera_on_spawn "0"
-// Center screen on hero after respawn
-engine_no_focus_sleep "0"
-// keeps dota running at max frame rates even when alt + tabbed
-cl_forcepreload "1"
-// reducing loading pauses and stuttering (information to preload)
-sv_forcepreload "1"
+dota_always_show_player_names "1"	//	Always show player names
+dota_camera_disable_zoom "1"		//	Disables mousewheel zoom
+dota_reset_camera_on_spawn "0"		//	Center screen on hero after respawn
+engine_no_focus_sleep "0"			//	Keeps dota running at max frame rates even when alt + tabbed
 cl_globallight_shadow_mode "0"
 r_deferred_height_fog "0"
 r_deferred_simple_light "1"
 r_screenspace_aa "0"
-dota_killcam_show "1"
-dota_sf_hud_killcam "1"
 dota_sf_game_end_delay "0"
-windows_speaker_config "1"
-// Sound optimized for headset
-windows_speaker_setting "1"
-// Sound optimized for headset
-volume "0.5"
-// Volume adjusted for teamspeak
-snd_musicvolume "0"
-// Ingame music volume (Min "0" Max "1.0")
+volume "0.5"						//	Volume adjusted for teamspeak
+snd_musicvolume "0"					//	Ingame music volume (Min "0" Max "1.0")
 dota_player_add_summoned_to_selection "0"
 
-//alias "quick_courier" "dota_courier_deliver; say_team Courier is coming TO ME!;dota_select_courier;dota_ability_execute 5;+dota_camera_follow"
-alias "quick_courier" "dota_select_courier; dota_ability_execute 2; dota_ability_execute 3; dota_ability_execute 4;dota_ability_execute 5; +dota_camera_follow" 
+//	Courier picks up whole stash and brings it to you with speedup before returning to base; shift+key queue's up auto courier
+alias "quick_courier" "say_team Courier is coming to me! Please wait.;dota_select_courier; dota_ability_execute 2; dota_ability_execute 3; dota_ability_execute 4;dota_ability_execute 5; +dota_camera_follow" 
 bind "v" "quick_courier"
-// Courier picks up whole stash and brings it to you with speedup before returning to base; shift+key queue's up auto courier
 
+//	Pressing button "G" starts cycling through 1st, 2nd runes & your hero
 alias "runecheck" "runechecktop"
 alias "runechecktop" "dota_camera_set_lookatpos -2287 1817; alias runecheck runecheckbot"
 alias "runecheckbot" "dota_camera_set_lookatpos 2990 -2400; alias runecheck runecheckhero"
 alias "runecheckhero" "dota_select_all; dota_select_all; +dota_camera_follow; alias runecheck runechecktop"
 bind "g" "runecheck"
-// Toggle net graph
 
-bind "t" "dota_learn_stats"
-
+//	Prepare your teammates for the worst
 bind "F1" "say_team missTOP"
 bind "F2" "say_team missMID"
 bind "F3" "say_team missBOT"
 bind "F4" "say_team RE"
 
-alias "+showboard" "+showscores;dota_apm"
-alias "-showboard" "-showscores;"
-bind "tab" "showboard"
-// Shows scoreboard and APM in the console
+//	Pressing spacebar triggers buyback function
+unbind "BACKSPACE"
+bind "BACKSPACE" "dota_test_buyback"
 
-// chat_join "name"
-// Automatically joins a chat channel upon launch.
+//	Toogle scores menu by pressing Tab key
+bind "TAB" "showscores"
+alias "showscores_on" "+showscores; alias showscores showscores_off"
+alias "showscores_off" "-showscores; alias showscores showscores_on"
+showscores_off
 
-bind "o" "current_time"
+//	Write to your teammates current time with Roshan-prefix to it
+bind "CTRL" "+current_time_meta"
+alias "+current_time_meta" "bind TAB current_time"
 alias "current_time" "say_team Roshan has been slain!; chatwheel_say 57"
 
-bind "F8" "exec autoexec.cfg" // executes this config again to have smartcast working every time you start a match
-echo "autoexec enabled!"
-
-//holding 'y' now creates a ring around yourself which has the exact range of a tower. 
-alias "+range" "dota_range_display 950" 
-alias "-range" "dota_range_display 0"
-bind "y" "range"
-
-//alias dc disconnect // you can now disconnect by typing "dc" in console
-
-//alias rune1 "dota_camera_setpos -2273.898682 1232.745483 982.072876;bind f3 rune2" // Top Rune
-//alias rune2 "dota_camera_setpos 3035.773438 -2972.680176 966.072937;bind f3 backtome" // Bot Rune
-//alias backtome "+dota_camera_follow;-dota_camera_follow;+dota_camera_follow;-dota_camera_follow;bind f3 rune1"
-//bind F3 rune1 // Hit f3 once for top rune, again for bottom, and again to go back to yourself.
-
+//	Use certain skills without confirmation by left clicking on target etc
 bind "q" "dota_ability_execute 0; +sixense_left_click; -sixense_left_click"
 bind "w" "dota_ability_execute 1; +sixense_left_click; -sixense_left_click"
 bind "e" "dota_ability_execute 2; +sixense_left_click; -sixense_left_click"
@@ -159,7 +115,8 @@ bind "d" "dota_ability_execute 3; +sixense_left_click; -sixense_left_click"
 bind "f" "dota_ability_execute 4; +sixense_left_click; -sixense_left_click"
 bind "r" "dota_ability_execute 5; +sixense_left_click; -sixense_left_click"
 
-snd_mix_async 1
+//	Other graphics changes (Low Hardcore Mode)
+snd_mix_async "1"
 net_compressvoice "1"
 net_maxcleartime "0"
 mem_level "0"
@@ -174,16 +131,6 @@ cl_detailfade "150"
 cl_phys_maxticks "3"
 cl_threaded_bone_setup "1"
 cl_threaded_init "1"
-//cl_cmdrate 66
-//cl_interp 0.0152
-//cl_interp_ratio 1
-//cl_lagcompensation 1
-//cl_pred_optimize 2
-//cl_smooth 0
-//cl_smoothtime 0.01
-//cl_updaterate 66
-//rate 60000
-//cl_showfps 0
 ragdoll_sleepaftertime "3"
 props_break_max_pieces "2"
 r_deferred_height_fog "0"
@@ -217,6 +164,5 @@ mat_local_contrast_enable "0"
 mat_motion_blur_enabled "0"
 mat_picmip "1"
 mat_vsync "0"
-bind "BACKSPACE" "dota_test_buyback"
 
-echo LOADED. SETTINGS ACTIVATED. MISSILE LAUNCHED.
+echo LOADED. SETTINGS ACTIVATED. MISSILES LAUNCHED.
